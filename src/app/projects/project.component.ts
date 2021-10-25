@@ -16,7 +16,7 @@ export class ProjectComponent implements OnInit {
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-    console.log('era');
+    console.log(this.projectViewChild);
     // First get the product id from the current route.
     const routeParams = this.route.snapshot.paramMap;
     const projectIdFromRoute = Number(routeParams.get('projectId'));
