@@ -10,18 +10,19 @@ import { Observable } from 'rxjs';
   styleUrls: ['./project-list.component.scss'],
 })
 export class ProjectListComponent implements OnInit {
-  projects: Project[];
+  projects: any[];
 
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
     this.getJSON().subscribe((data) => {
-      console.log(data);
       this.projects = data;
     });
   }
 
   public getJSON(): Observable<any> {
-    return this.http.get('./assets/data.json'); //.subscribe(x=> this.projects = x;);
+    const requestOptions = Object.assign({}, { responseType: 'json' });
+
+    return this.http.get('/assets/data.json');
   }
 }

@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Project } from '../models/project';
-// import { projects } from '../models/mock-projects';
 import { ProjectListComponent } from '../projects/project-list.component';
 
 @Component({
@@ -17,6 +16,7 @@ export class ProjectComponent implements OnInit {
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
+    console.log('era');
     // First get the product id from the current route.
     const routeParams = this.route.snapshot.paramMap;
     const projectIdFromRoute = Number(routeParams.get('projectId'));
